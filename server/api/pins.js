@@ -6,8 +6,8 @@ const data = fs.readFileSync("nyc_ttp_pins.json", { encoding: "utf-8" });
 
 router.get("/", async (req, res, next) => {
   try {
-    console.log("data ", data);
-    res.status(200).json(pins);
+    console.log("I'm here!");
+    res.status(200).send(data);
   } catch (error) {
     next(error);
   }
