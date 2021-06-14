@@ -21,22 +21,30 @@ router.get("/:name", async (req, res, next) => {
     const { name } = req.params;
     console.log(`${name}`);
     let jsonObj = JSON.parse(data);
+    let avoidDuplicates = new Set();
     let found = [];
+
     const pin = await jsonObj.map((ele) => {
       let find = ele.pin_join.visual_annotation;
-      //Loop through all the possible options to get the right data.
+      //loop through all the possible options to get the right data.
       for (let i = 0; i < find.length; i++) {
         let strArr = find[i].split(" ");
         strArr.map((words) => {
           if (words.includes(name)) {
-            found.push(ele);
+            if (!avoidDuplicates.has(ele.id)) {
+              avoidDuplicates.add(ele.id);
+              found.push(ele);
+            }
           }
         });
       }
       //get element name and compare to input.
       if (ele.board.name === name) {
         console.log("hit route");
-        found.push(ele);
+        if (!avoidDuplicates.has(ele.id)) {
+          avoidDuplicates.add(ele.id);
+          found.push(ele);
+        }
       }
     });
     if (found) {
