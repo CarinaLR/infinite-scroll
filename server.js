@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
 
-app.use("/api", require("./server/api"));
+app.use("/", require("./server/api"));
 
 app.get("/", (req, res) => res.send("HELLO PINTEREST"));
 
