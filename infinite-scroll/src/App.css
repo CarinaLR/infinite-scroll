@@ -28,6 +28,11 @@
   width: 500px;
 }
 
+.img-size-card {
+  height: 50%;
+  width: 50%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
