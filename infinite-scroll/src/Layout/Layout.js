@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
+import Home from "./Home";
 
 export class Layout extends Component {
   loading = () => (
@@ -12,6 +13,7 @@ export class Layout extends Component {
           <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
               <Header />
+              <Home />
             </div>
           </div>
         </div>

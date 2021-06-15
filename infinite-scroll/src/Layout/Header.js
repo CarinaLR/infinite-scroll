@@ -12,10 +12,14 @@ export class Header extends Component {
             <i class="fa fa-bars"></i>
           </button>
 
-          <a class="navbar-brand" href="#">
+          <a
+            class="navbar-brand"
+            href="https://reactjs.org/docs/getting-started.html"
+          >
             <img
               class="img-profile rounded-circle"
               src="assets/img/basixLogo.png"
+              alt="..."
             ></img>
           </a>
 
@@ -40,7 +44,7 @@ export class Header extends Component {
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="https://reactjs.org/docs/getting-started.html"
                 id="searchDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -75,7 +79,7 @@ export class Header extends Component {
             <li class="nav-item dropdown no-arrow mx-1">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="https://reactjs.org/docs/getting-started.html"
                 id="alertsDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -89,21 +93,30 @@ export class Header extends Component {
                 aria-labelledby="alertsDropdown"
               >
                 <h6 class="dropdown-header">Alerts Center</h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
                       <i class="fas fa-donate text-white"></i>
                     </div>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <div class="mr-3">
                     <div class="icon-circle bg-warning">
                       <i class="fas fa-exclamation-triangle text-white"></i>
@@ -116,7 +129,7 @@ export class Header extends Component {
             <li class="nav-item dropdown no-arrow mx-1">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="https://reactjs.org/docs/getting-started.html"
                 id="messagesDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -130,45 +143,35 @@ export class Header extends Component {
                 aria-labelledby="messagesDropdown"
               >
                 <h6 class="dropdown-header">Message Center</h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <div class="dropdown-list-image mr-3">
                     <img
                       class="rounded-circle"
-                      src="https://source.unsplash.com/fn_BT9fwg_E/60x60"
+                      src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
                       alt=""
                     />
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">
-                      Hi there! I am wondering if you can help me with a problem
-                      I've been having.
+                      Hi there! I have the photos that you ordered last month,
+                      how would you like them sent to you?
                     </div>
                     <div class="small text-gray-500">Emily Fowler · 58m</div>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <div class="dropdown-list-image mr-3">
                     <img
                       class="rounded-circle"
                       src="https://source.unsplash.com/AU4VPcFN4LE/60x60"
-                      alt=""
-                    />
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">
-                      I have the photos that you ordered last month, how would
-                      you like them sent to you?
-                    </div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img
-                      class="rounded-circle"
-                      src="https://source.unsplash.com/CS2uCrpNzJY/60x60"
                       alt=""
                     />
                     <div class="status-indicator bg-warning"></div>
@@ -178,30 +181,13 @@ export class Header extends Component {
                       Last month's report looks great, I am very happy with the
                       progress so far, keep up the good work!
                     </div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img
-                      class="rounded-circle"
-                      src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                      alt=""
-                    />
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">
-                      Am I a good boy? The reason I ask is because someone told
-                      me that people say this to all dogs, even if they aren't
-                      good...
-                    </div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
+
                 <a
                   class="dropdown-item text-center small text-gray-500"
-                  href="#"
+                  href="https://reactjs.org/docs/getting-started.html"
                 >
                   Read More Messages
                 </a>
@@ -213,7 +199,7 @@ export class Header extends Component {
             <li class="nav-item dropdown no-arrow">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="https://reactjs.org/docs/getting-started.html"
                 id="userDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -226,28 +212,38 @@ export class Header extends Component {
                 <img
                   class="img-profile rounded-circle"
                   src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                  alt="..."
                 />
               </a>
               <div
                 class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown"
               >
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="https://reactjs.org/docs/getting-started.html"
+                >
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a
                   class="dropdown-item"
-                  href="#"
+                  href="https://reactjs.org/docs/getting-started.html"
                   data-toggle="modal"
                   data-target="#logoutModal"
                 >
