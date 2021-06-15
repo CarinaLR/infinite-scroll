@@ -13,6 +13,21 @@
   }
 }
 
+.navbar-brand {
+  width: 150px;
+  font-size: 24px;
+}
+.navbar-brand img {
+  height: 50px;
+  /* put value of image height as your need */
+  float: left;
+  margin-right: 7px;
+}
+
+.navbar-form {
+  width: 500px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,5 +49,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-form {
+    width: 100%;
   }
 }

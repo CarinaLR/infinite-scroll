@@ -8,7 +8,7 @@ export class Layout extends Component {
   render() {
     return (
       <div>
-        <div id="wrapper">
+        <div>
           <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
               <Header />

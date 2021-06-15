@@ -12,7 +12,14 @@ export class Header extends Component {
             <i class="fa fa-bars"></i>
           </button>
 
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <a class="navbar-brand" href="#">
+            <img
+              class="img-profile rounded-circle"
+              src="assets/img/basixLogo.png"
+            ></img>
+          </a>
+
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-6 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input
                 type="text"
