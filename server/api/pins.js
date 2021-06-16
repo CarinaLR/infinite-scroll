@@ -72,6 +72,7 @@ router.get("/:name", async (req, res, next) => {
         }
       }
     });
+
     if (found) {
       res.status(200).send(found);
     } else {
@@ -144,22 +145,41 @@ import { useEffect, useState, React } from "react";
 import axios from "axios";
 
 const useSearch = (query, pageNumber) => {
-  // sfetching and setting data with React hooks
+ // fetching and setting data with React hooks
   useEffect(() => {
     let cancel;
     axios({
       method: "GET",
-      url: "/api",
+      url: `/api/${query}`,
       params: { q: query, page: pageNumber },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
-    }).then((res) => {
-      console.log(res.data);
-    });
+    })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) return;
+      });
     return () => cancel();
   }, [query, pageNumber]);
 
   return null;
 };
 
-export default useSearch;
+useSEarch
+setPins((prevPins) => {
+          return [
+            ...new Set([
+              ...prevPins,
+              ...res.data.map((pin) => pin.pinner.full_name),
+            ]),
+          ];
+        });
+
+LAYOUT
+<section className="text-center mb-4">
+          <div className="home-container">
+            <Home />
+          </div>
+        </section>
  */

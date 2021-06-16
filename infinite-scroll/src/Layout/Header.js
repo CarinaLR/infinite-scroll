@@ -17,7 +17,12 @@ const Header = () => {
     handleSearch(e);
   };
 
-  useSearch(query, pageNumber);
+  const { pins, hasMore, loading, error } = useSearch(query, pageNumber);
+  console.log(
+    `in component loading ${loading}, pins ${pins.length}, hasMore ${hasMore}`
+  );
+  console.log("each", pins);
+
   return (
     <div>
       <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -274,6 +279,33 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
+      <div className="cotainer">
+        <section className="text-center mb-4">
+          <div className="row wow fadeIn">
+            {pins.map((pin) => (
+              <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
+                <div className="card">
+                  <img
+                    className="card-img-top images"
+                    src={pin[3]}
+                    alt="..."
+                  ></img>
+                  <div className="card-body">
+                    <label className="card-text">
+                      <strong>{pin[0]}</strong>
+                    </label>
+                    <p className="card-text">{pin[2]}</p>
+                  </div>
+                  <label className="card-text">{pin[1]}</label>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <div>{loading && "Loading..."}</div>
+        <div>{error && "Error"}</div>
+      </div>
     </div>
   );
 };

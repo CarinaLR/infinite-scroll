@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import useSearch from "../Hooks/useSearch";
 
 const Home = (props) => {
   // state in our functional component, with React hooks
@@ -13,6 +14,11 @@ const Home = (props) => {
   React.useEffect(() => {
     getData();
   }, []);
+
+  const { pinsProps, hasMore, loading, error } = useSearch();
+  console.log(
+    `in Home loading ${loading}, pins ${pinsProps}, hasMore ${hasMore}`
+  );
 
   return (
     <div className="container">
