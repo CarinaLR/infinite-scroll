@@ -10,12 +10,17 @@ export class Layout extends Component {
     return (
       <div>
         <div>
-          <div id="content-wrapper" className="d-flex flex-column">
-            <div id="content">
+          <div className="row">
+            <div className="container">
               <Header />
-              <Home />
             </div>
           </div>
+
+          <section className="text-center mb-4">
+            <div className="home-container">
+              <Home />
+            </div>
+          </section>
         </div>
       </div>
     );

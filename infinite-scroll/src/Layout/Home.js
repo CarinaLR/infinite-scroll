@@ -17,9 +17,9 @@ const Home = (props) => {
   }, []);
 
   return (
-    <div className="d-flex flex-column">
-      <div id="container text-center mb-4">
-        <div className="row">
+    <div className="container">
+      <section className="text-center mb-4">
+        <div className="row wow fadeIn">
           <InfiniteScroll
             dataLength={pins.length}
             next={getData}
@@ -27,15 +27,14 @@ const Home = (props) => {
             loader={<h3>Loading...</h3>}
           >
             {pins.map((pin) => (
-              <div className="col-md-6 mb-4" key={pin.id}>
-                <div className="card" key={pin.id}>
+              <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
+                <div className="card">
                   <img
-                    className="card-img-top img-size-card"
-                    src={pin.images.orig}
+                    className="card-img-top images"
+                    src="assets/img/blackLogo.png"
                     alt="..."
                   ></img>
-                  <div classNAme="card-body">
-                    <h4>{pin.board.name}</h4>
+                  <div className="card-body">
                     <p className="card-text">{pin.description}</p>
                   </div>
                   <label className="card-text">{pin.pinner.full_name}</label>
@@ -44,7 +43,7 @@ const Home = (props) => {
             ))}
           </InfiniteScroll>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

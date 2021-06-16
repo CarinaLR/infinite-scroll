@@ -7,13 +7,38 @@ const data = fs.readFileSync("nyc_ttp_pins.json", { encoding: "utf-8" });
 //retrive all data as a json object.
 router.get("/", async (req, res, next) => {
   try {
-    console.log("I'm here!");
     let jsonObj = JSON.parse(data);
+    console.log("jsonObj", jsonObj.length);
     res.status(200).send(jsonObj);
   } catch (error) {
     next(error);
   }
 });
+
+//retrive data by blocks of data.
+// router.get("/", async (req, res, next) => {
+//   try {
+//     let dataBlock = [];
+//     let start = req.query.start;
+//     let count = req.query.count;
+//     let jsonObj = JSON.parse(data);
+//     console.log("jsonObj", jsonObj.length);
+
+//     const pins = async (start, count) => {
+//       for (let i = start; i < count; i++) {
+//         dataBlock.push(jsonObj[i]);
+//       }
+//     };
+
+//     if (dataBlock) {
+//       res.status(200).send(dataBlock);
+//     } else {
+//       res.sendStatus(400);
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 //search data by a specific input.
 router.get("/:name", async (req, res, next) => {
