@@ -7,6 +7,11 @@ const useSearch = (query, pageNumber) => {
   const [pins, setPins] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
+  //prevent event to append new pins
+  useEffect(() => {
+    setPins([]);
+  }, [query]);
+
   // fetching and setting data with React hooks
   useEffect(() => {
     setLoading(true);
