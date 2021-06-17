@@ -1,12 +1,16 @@
-# Infinite Scroll Implementation
+# Infinite-Scroll Implementation (Pinterest)
 
-Challenge #1.
+Challenge #1 - Infinite-Scroll.
 
-`Tandem-Trivia` is a game where the user can get a set of 10 `questions`. Each question will have a respective set of `options`. Upon selection, if the answer from the user is correct, the score will increase 10 points. After the round of 10 questions and once the `submit` button is clicked, the final score will be displayed.
+`Pinterest` has infinite scroll feature implementation. Given static `JSON` Pinterest Pins, design and implement a page that shows all the `pins` and allows infinite-scroll.
 
-This project is base on tandem's questions data.
+Optional feature, `search-bar` allows the users to search for a specific `topic`, and allows infinite scrolling, reusing the Pins as needed. Reusing the data fetching from `home page` to arrange on the page and support infinite scrolling.
 
-Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstrap4`.
+`Loading...` will be displayed at the end of the page, given a certain set of time `10 seconds` to fetch the extra data needed.
+
+This project is base on pinterest's pins data.
+
+Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstrap4` / `Start Bootstrap Templates`.
 
 ## Setup
 
