@@ -12,7 +12,7 @@ const useInfScroll = () => {
     setPins([]);
   }, []);
 
-  // fetching and setting data with React hooks
+  //fetching and setting data with React hooks
   useEffect(() => {
     setLoading(true);
     setError(false);
@@ -38,7 +38,6 @@ const useInfScroll = () => {
         });
         setHasMore(res.data.length > 0);
         setLoading(false);
-        console.log("DATA", res.data);
       })
       .catch((error) => {
         if (axios.isCancel(error)) return;

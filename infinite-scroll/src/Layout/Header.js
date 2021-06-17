@@ -30,12 +30,14 @@ const Header = () => {
     [loading, hasMore]
   );
 
+  //function to get input from form and store in state
   const handleSearch = (e) => {
     console.log("query ", e);
     setQuery(e.search);
     setPageNumber(1);
   };
 
+  //function to handle form submition
   const onSubmit = (e) => {
     handleSearch(e);
   };
