@@ -61,6 +61,15 @@ const Header = () => {
             src="assets/img/basixLogo.png"
             alt="..."
           ></img>
+
+          <a
+            class="nav-link"
+            href="https://reactjs.org/docs/getting-started.html"
+          >
+            <button type="button" class="btn btn-dark" id="home-button">
+              <strong>Home</strong>
+            </button>
+          </a>
         </a>
 
         <form
@@ -77,7 +86,7 @@ const Header = () => {
               aria-describedby="basic-addon2"
             />
             <div className="input-group-append">
-              <button className="btn btn-warning" type="submit" value="submit">
+              <button className="btn bg-light" type="submit" value="submit">
                 <i className="fas fa-search fa-sm"></i>
               </button>
             </div>
