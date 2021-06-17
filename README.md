@@ -16,13 +16,15 @@ Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstr
 
 ```
 # server -contains the api folder that separates our server-side from the client-side.
-# server.js -the core of the project structure connects the app with the database and all the corresponding paths, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
-# urls.py -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
+# server.js -the core of the project structure connects the app with the database, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
+# index.js -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
+# pins.js -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
 # infinite-scroll -the core of the project structure connects the app with the database and all the corresponding paths, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
-# models.py -gives a perspective of how each table of the database looks like and what data types are referring to.
-# templates folder -contains all HTML files.
-# static folder -contains ` tandem ` folder which contains the css file with the stylesheet, all images using in the application, javascript file and a `readme` folder which contains the images for the readme file.
-# main.js -connects the client-side with the server-side, here all the APIs calls are made to fetch information from the database. The path using in our fetch request has to match with the path on our urls.py to connect with the view function and retrieve information. AJAX calls are also to prevent refresh/ reloading the webpage which makes our app run fast. This file is where gets to work all the functionality of our app to be displayed and interact with the user.
+# src folder -gives a perspective of how each table of the database looks like and what data types are referring to.
+# Hooks folder -gives a perspective of how each table of the database looks like and what data types are referring to.
+# Layout folder -gives a perspective of how each table of the database looks like and what data types are referring to.
+# public folder -contains ` assets` folder which contains the css file with the stylesheet, all images using in the application, javascript file and a `readme` folder which contains the images for the readme file.
+# App.js -connects the client-side with the server-side, here all the APIs calls are made to fetch information from the database. The path using in our fetch request has to match with the path on our urls.py to connect with the view function and retrieve information. AJAX calls are also to prevent refresh/ reloading the webpage which makes our app run fast. This file is where gets to work all the functionality of our app to be displayed and interact with the user.
 
 ```
 

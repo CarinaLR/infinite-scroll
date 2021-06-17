@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Infinite-Scroll Implementation (Pinterest)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Challenge #1 - Infinite-Scroll.
 
-## Available Scripts
+`Pinterest` has infinite scroll feature implementation. Given static `JSON` Pinterest Pins, design and implement a page that shows all the `pins` and allows infinite-scroll.
 
-In the project directory, you can run:
+Optional feature, `search-bar` allows the users to search for a specific `topic`, and allows infinite scrolling, reusing the Pins as needed. Reusing the data fetching from `home page` to arrange on the page and support infinite scrolling.
 
-### `npm start`
+`Loading...` will be displayed at the end of the page, given a certain set of time `10 seconds` to fetch the extra data needed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is base on pinterest's pins data.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstrap4` / `Start Bootstrap Templates`.
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+# server -contains the api folder that separates our server-side from the client-side.
+# server.js -the core of the project structure connects the app with the database, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
+# index.js -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
+# pins.js -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
+# infinite-scroll -the core of the project structure connects the app with the database and all the corresponding paths, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
+# src folder -gives a perspective of how each table of the database looks like and what data types are referring to.
+# Hooks folder -gives a perspective of how each table of the database looks like and what data types are referring to.
+# Layout folder -gives a perspective of how each table of the database looks like and what data types are referring to.
+# public folder -contains ` assets` folder which contains the css file with the stylesheet, all images using in the application, javascript file and a `readme` folder which contains the images for the readme file.
+# App.js -connects the client-side with the server-side, here all the APIs calls are made to fetch information from the database. The path using in our fetch request has to match with the path on our urls.py to connect with the view function and retrieve information. AJAX calls are also to prevent refresh/ reloading the webpage which makes our app run fast. This file is where gets to work all the functionality of our app to be displayed and interact with the user.
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Enviroment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `python3 -m venv venv` create a virtual python enviroment
+- `$ . venv/bin/activate` activates the enviroment
+- `git clone` with this repo url to get the code in local machine
+- `pip install requirement.txt` to get all dependecies and packages
+- `pip install django` to creat superuser and activate database
+- `python manage.py makemigrations tandem` create tables and for our db
+- `python manage.py migrate` migrate the tables
+- `python manage.py runserver` activate localhost
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Home Page.
 
-### `npm run eject`
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-home.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Loading, hook implementing at the end of the page to keep infinite scroll.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-loading.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-new-loading.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Search-Bar, allows users to search for a specific topic in our data. Sending a query to our api endpoint.
 
-## Learn More
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-search-bar.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Responsive design, with a dropdown menu.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](/infinite-scroll/public/assets/redmePics/responsive-design-infinite-scroll.png)
