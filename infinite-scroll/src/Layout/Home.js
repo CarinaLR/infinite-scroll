@@ -7,19 +7,16 @@ const Home = () => {
   const [newPins, setNewPins] = useState([]);
   //state in our functional component, with React hooks
   const { loading, error, pins, hasMore } = useInfScroll();
-  console.log("pins", pins);
 
   //setting the state for the number of items
   useEffect(() => {
     setItems(pins.length);
   }, [pins.length]);
-  console.log("items", items);
 
   //setting the state for the elements to show
   useEffect(() => {
     setNewPins([...pins]);
   }, [pins]);
-  console.log("newPins", newPins);
 
   //the function triggers infinite scroll adding new items to our array of pins, waiting a certain time to reload them, and display them into the DOM.
   const loadMore = () => {

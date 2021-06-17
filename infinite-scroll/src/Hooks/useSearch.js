@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useSearch = (query, pageNumber) => {
+const useSearch = (query) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [pins, setPins] = useState([]);
@@ -21,7 +21,7 @@ const useSearch = (query, pageNumber) => {
     axios({
       method: "GET",
       url: `/api/${query}`,
-      params: { q: query, page: pageNumber },
+      params: { q: query },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
       .then((res) => {
@@ -40,17 +40,13 @@ const useSearch = (query, pageNumber) => {
         });
         setHasMore(res.data.length > 0);
         setLoading(false);
-        console.log(res.data);
-        console.log(
-          `in hook loading ${loading}, pins ${pins.length}, hasMore ${hasMore}`
-        );
       })
       .catch((error) => {
         if (axios.isCancel(error)) return;
         setError(true);
       });
     return () => cancel();
-  }, [query, pageNumber]);
+  }, [query]);
 
   return { loading, error, pins, hasMore };
 };

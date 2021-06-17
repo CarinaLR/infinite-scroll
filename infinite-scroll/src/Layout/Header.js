@@ -4,13 +4,10 @@ import useSearch from "../Hooks/useSearch";
 
 const Header = () => {
   const [query, setQuery] = useState(" ");
-  const [pageNumber, setPageNumber] = useState(1);
+  //const [pageNumber, setPageNumber] = useState(1);
   const { register, handleSubmit } = useForm();
 
-  const { pins, hasMore, loading, error } = useSearch(query, pageNumber);
-  console.log(
-    `in component loading ${loading}, pins ${pins.length}, hasMore ${hasMore}`
-  );
+  const { pins, hasMore, loading, error } = useSearch(query);
 
   //Ref is use to store references to elements, which by default is going to get undefined.
   const observer = useRef();
@@ -21,28 +18,23 @@ const Header = () => {
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
           console.log("visible");
-          // setPageNumber((prevPageNumber) => prevPageNumber + 1);
         }
       });
-      // if (node) observer.current.observe(node);
-      console.log("node ", node);
+      if (node) observer.current.observe(node);
     },
     [loading, hasMore]
   );
 
   //function to get input from form and store in state
   const handleSearch = (e) => {
-    console.log("query ", e);
     setQuery(e.search);
-    setPageNumber(1);
+    //setPageNumber(1);
   };
 
   //function to handle form submition
   const onSubmit = (e) => {
     handleSearch(e);
   };
-
-  console.log("each", pins);
 
   return (
     <div>

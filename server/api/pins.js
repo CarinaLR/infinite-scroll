@@ -8,7 +8,6 @@ const data = fs.readFileSync("nyc_ttp_pins.json", { encoding: "utf-8" });
 router.get("/", async (req, res, next) => {
   try {
     let jsonObj = JSON.parse(data);
-    console.log("jsonObj", jsonObj.length);
     res.status(200).send(jsonObj);
   } catch (error) {
     next(error);
@@ -19,7 +18,6 @@ router.get("/", async (req, res, next) => {
 router.get("/:name", async (req, res, next) => {
   try {
     const { name } = req.params;
-    console.log(`${name}`);
     let jsonObj = JSON.parse(data);
     let avoidDuplicates = new Set();
     let found = [];
@@ -40,7 +38,6 @@ router.get("/:name", async (req, res, next) => {
       }
       //get element name and compare to input.
       if (ele.board.name === name) {
-        console.log("hit route");
         if (!avoidDuplicates.has(ele.id)) {
           avoidDuplicates.add(ele.id);
           found.push(ele);
