@@ -15,31 +15,6 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//retrive data by blocks of data.
-// router.get("/", async (req, res, next) => {
-//   try {
-//     let dataBlock = [];
-//     let start = req.query.start;
-//     let count = req.query.count;
-//     let jsonObj = JSON.parse(data);
-//     console.log("jsonObj", jsonObj.length);
-
-//     const pins = async (start, count) => {
-//       for (let i = start; i < count; i++) {
-//         dataBlock.push(jsonObj[i]);
-//       }
-//     };
-
-//     if (dataBlock) {
-//       res.status(200).send(dataBlock);
-//     } else {
-//       res.sendStatus(400);
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// });
-
 //search data by a specific input.
 router.get("/:name", async (req, res, next) => {
   try {
@@ -86,58 +61,6 @@ router.get("/:name", async (req, res, next) => {
 module.exports = router;
 
 /*
-import React from "react";
-import axios from "axios";
-import InfiniteScroll from "react-infinite-scroll-component";
-
-const Home = (props) => {
-  // state in our functional component, with React hooks
-  const [pins, setPins] = React.useState([]);
-
-  const getData = async () => {
-    const { data } = await axios.get("/api");
-    console.log("data =>", data);
-    setPins(data);
-  };
-
-  React.useEffect(() => {
-    getData();
-  }, []);
-
-  return (
-    <div className="container">
-      <section className="text-center mb-4">
-        <div className="row wow fadeIn">
-          <InfiniteScroll
-            dataLength={pins.length}
-            next={getData}
-            hasMore={true}
-            loader={<h3>Loading...</h3>}
-          >
-            {pins.map((pin) => (
-              <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
-                <div className="card">
-                  <img
-                    className="card-img-top images"
-                    src="assets/img/blackLogo.png"
-                    alt="..."
-                  ></img>
-                  <div className="card-body">
-                    <p className="card-text">{pin.description}</p>
-                  </div>
-                  <label className="card-text">{pin.pinner.full_name}</label>
-                </div>
-              </div>
-            ))}
-          </InfiniteScroll>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default Home;
-
 
 HOOK USESEARCH
 
@@ -166,15 +89,7 @@ const useSearch = (query, pageNumber) => {
   return null;
 };
 
-useSEarch
-setPins((prevPins) => {
-          return [
-            ...new Set([
-              ...prevPins,
-              ...res.data.map((pin) => pin.pinner.full_name),
-            ]),
-          ];
-        });
+
 
 LAYOUT
 <section className="text-center mb-4">

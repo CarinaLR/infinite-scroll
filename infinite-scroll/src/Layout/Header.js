@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import useSearch from "../Hooks/useSearch";
 
@@ -6,6 +6,29 @@ const Header = () => {
   const [query, setQuery] = useState(" ");
   const [pageNumber, setPageNumber] = useState(1);
   const { register, handleSubmit } = useForm();
+
+  const { pins, hasMore, loading, error } = useSearch(query, pageNumber);
+  console.log(
+    `in component loading ${loading}, pins ${pins.length}, hasMore ${hasMore}`
+  );
+
+  //Ref is use to store references to elements, which by default is going to get undefined.
+  const observer = useRef();
+  const lastPinRef = useCallback(
+    (node) => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          console.log("visible");
+          // setPageNumber((prevPageNumber) => prevPageNumber + 1);
+        }
+      });
+      // if (node) observer.current.observe(node);
+      console.log("node ", node);
+    },
+    [loading, hasMore]
+  );
 
   const handleSearch = (e) => {
     console.log("query ", e);
@@ -17,10 +40,6 @@ const Header = () => {
     handleSearch(e);
   };
 
-  const { pins, hasMore, loading, error } = useSearch(query, pageNumber);
-  console.log(
-    `in component loading ${loading}, pins ${pins.length}, hasMore ${hasMore}`
-  );
   console.log("each", pins);
 
   return (
@@ -283,24 +302,51 @@ const Header = () => {
       <div className="cotainer">
         <section className="text-center mb-4">
           <div className="row wow fadeIn">
-            {pins.map((pin) => (
-              <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
-                <div className="card">
-                  <img
-                    className="card-img-top images"
-                    src={pin[3]}
-                    alt="..."
-                  ></img>
-                  <div className="card-body">
-                    <label className="card-text">
-                      <strong>{pin[0]}</strong>
-                    </label>
-                    <p className="card-text">{pin[2]}</p>
+            {pins.map((pin, index) => {
+              if (pins.length === index + 1) {
+                return (
+                  <div
+                    className="col-lg-3 col-md-6 mb-4"
+                    ref={lastPinRef}
+                    key={pin.id}
+                  >
+                    <div className="card">
+                      <img
+                        className="card-img-top images"
+                        src={pin[3]}
+                        alt="..."
+                      ></img>
+                      <div className="card-body">
+                        <label className="card-text">
+                          <strong>{pin[0]}</strong>
+                        </label>
+                        <p className="card-text">{pin[2]}</p>
+                      </div>
+                      <label className="card-text">{pin[1]}</label>
+                    </div>
                   </div>
-                  <label className="card-text">{pin[1]}</label>
-                </div>
-              </div>
-            ))}
+                );
+              } else {
+                return (
+                  <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
+                    <div className="card">
+                      <img
+                        className="card-img-top images"
+                        src={pin[3]}
+                        alt="..."
+                      ></img>
+                      <div className="card-body">
+                        <label className="card-text">
+                          <strong>{pin[0]}</strong>
+                        </label>
+                        <p className="card-text">{pin[2]}</p>
+                      </div>
+                      <label className="card-text">{pin[1]}</label>
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </div>
         </section>
         <div>{loading && "Loading..."}</div>
