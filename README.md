@@ -35,14 +35,16 @@ Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstr
 
 ![](/infinite-scroll/public/assets/redmePics/infinite-scroll-home.png)
 
-## Shows selected option in alert box.
+## Loading, hook implementing at the end of the page to keep infinite scroll.
 
-![](/infinite-scroll/public/assets/readmePics/infinite-scroll-home.png)
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-loading.png)
 
-## Disable next button and activate submit button.
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-new-loading.png)
 
-![](/infinite-scroll/public/assets/readmePics/infinite-scroll-home.png)
+## Search-Bar, allows users to search for a specific topic in our data. Sending a query to our api endpoint.
 
-## Display final score.
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-search-bar.png)
 
-![](/infinite-scroll/public/assets/readmePics/infinite-scroll-home.png)
+## Responsive design, with a dropdown menu.
+
+![](/infinite-scroll/public/assets/redmePics/responsive-design-infinite-scroll.png)
