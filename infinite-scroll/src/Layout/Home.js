@@ -29,7 +29,7 @@ const Home = (props) => {
               <div className="card">
                 <img
                   className="card-img-top images"
-                  src="assets/img/blackLogo.png"
+                  src={pin.images.orig.url}
                   alt="..."
                 ></img>
                 <div className="card-body">

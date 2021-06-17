@@ -15,6 +15,12 @@ export class Layout extends Component {
               <Header />
             </div>
           </div>
+
+          <section className="text-center mb-4">
+            <div className="home-container">
+              <Home />
+            </div>
+          </section>
         </div>
       </div>
     );
