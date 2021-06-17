@@ -15,16 +15,19 @@ Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstr
 ## Setup
 
 ```
-# server -contains the api folder that separates our server-side from the client-side.
+# server -contains the api folder, and separating the backend from the frontend.
 # server.js -the core of the project structure connects the app with the database, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
-# index.js -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
-# pins.js -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
-# infinite-scroll -the core of the project structure connects the app with the database and all the corresponding paths, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
-# src folder -gives a perspective of how each table of the database looks like and what data types are referring to.
-# Hooks folder -gives a perspective of how each table of the database looks like and what data types are referring to.
-# Layout folder -gives a perspective of how each table of the database looks like and what data types are referring to.
-# public folder -contains ` assets` folder which contains the css file with the stylesheet, all images using in the application, javascript file and a `readme` folder which contains the images for the readme file.
-# App.js -connects the client-side with the server-side, here all the APIs calls are made to fetch information from the database. The path using in our fetch request has to match with the path on our urls.py to connect with the view function and retrieve information. AJAX calls are also to prevent refresh/ reloading the webpage which makes our app run fast. This file is where gets to work all the functionality of our app to be displayed and interact with the user.
+# index.js -configure the middleware specific to this router.
+# pins.js -determines the paths for each API endpoint. Connects the HTTP request fetch the data and send the response in JSON format. Here we define the routes and arguments that we would need to fetch the data.
+
+# infinite-scroll -contains all the frontend modules, here we store all client-side modules, needed to connect to our backend and display it to the DOM.
+# src folder -the core of the frontend structure connects and renders our components and hooks.
+# Hooks folder -contains useInfScroll and useSearch custom hooks, need it to set state using in our components, in a modular reusing way.
+# Layout folder -contains Layout.js, Home.js, and Header.js which are our components used to implement infinite scrolling implementing functional component,s and utilizing react hooks.
+# App.js -Wraps the Layout component, which at the same time wraps the Header and Home components allowing them to render in the application.
+# public folder -contains ` assets` folder which contains the css file with the stylesheet and templates, all images using in the readme file, javascript file which also supports the template used.
+
+React Hooks allows to break down the logic. Allows to reuse the component, and bringing in that logic to other components, providing stateless components which means, having a functional component.
 
 ```
 
