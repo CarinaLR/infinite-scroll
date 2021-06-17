@@ -33,7 +33,7 @@ Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstr
 
 ## Home Page.
 
-![](../infinite-scroll/public/assets/readmePics/infinite-scroll-home.png)
+![](/infinite-scroll/public/assets/redmePics/infinite-scroll-home.png)
 
 ## Shows selected option in alert box.
 
