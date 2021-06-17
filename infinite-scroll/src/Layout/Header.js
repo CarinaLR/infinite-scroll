@@ -317,7 +317,7 @@ const Header = () => {
                   <div
                     className="col-lg-3 col-md-6 mb-4"
                     ref={lastPinRef}
-                    key={pin.id}
+                    key={pin[4]}
                   >
                     <div className="card">
                       <img
@@ -326,18 +326,17 @@ const Header = () => {
                         alt="..."
                       ></img>
                       <div className="card-body">
-                        <label className="card-text">
-                          <strong>{pin[0]}</strong>
-                        </label>
                         <p className="card-text">{pin[2]}</p>
                       </div>
-                      <label className="card-text">{pin[1]}</label>
+                      <label className="card-text">
+                        <strong>{pin[1]}</strong>
+                      </label>
                     </div>
                   </div>
                 );
               } else {
                 return (
-                  <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
+                  <div className="col-lg-3 col-md-6 mb-4" key={pin[4]}>
                     <div className="card">
                       <img
                         className="card-img-top images"
@@ -345,12 +344,11 @@ const Header = () => {
                         alt="..."
                       ></img>
                       <div className="card-body">
-                        <label className="card-text">
-                          <strong>{pin[0]}</strong>
-                        </label>
                         <p className="card-text">{pin[2]}</p>
                       </div>
-                      <label className="card-text">{pin[1]}</label>
+                      <label className="card-text">
+                        <strong>{pin[1]}</strong>
+                      </label>
                     </div>
                   </div>
                 );

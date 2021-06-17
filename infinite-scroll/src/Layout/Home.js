@@ -1,41 +1,30 @@
-import React from "react";
+import { useState } from "react";
 import axios from "axios";
-import useSearch from "../Hooks/useSearch";
+import useInfScroll from "../Hooks/useInfScroll";
 
-const Home = (props) => {
+const Home = () => {
   // state in our functional component, with React hooks
-  const [pins, setPins] = React.useState([]);
-
-  const getData = async () => {
-    const { data } = await axios.get("/api");
-    setPins(data);
-  };
-
-  React.useEffect(() => {
-    getData();
-  }, []);
-
-  const { pinsProps, hasMore, loading, error } = useSearch();
-  console.log(
-    `in Home loading ${loading}, pins ${pinsProps}, hasMore ${hasMore}`
-  );
+  const { loading, error, pins, hasMore } = useInfScroll();
+  console.log("pins", pins);
 
   return (
     <div className="container">
       <section className="text-center mb-4">
         <div className="row wow fadeIn">
           {pins.map((pin) => (
-            <div className="col-lg-3 col-md-6 mb-4" key={pin.id}>
+            <div className="col-lg-3 col-md-6 mb-4" key={pin[4]}>
               <div className="card">
                 <img
                   className="card-img-top images"
-                  src={pin.images.orig.url}
+                  src={pin[3]}
                   alt="..."
                 ></img>
                 <div className="card-body">
-                  <p className="card-text">{pin.description}</p>
+                  <p className="card-text">{pin[2]}</p>
                 </div>
-                <label className="card-text">{pin.pinner.full_name}</label>
+                <label className="card-text">
+                  <strong>{pin[1]}</strong>
+                </label>
               </div>
             </div>
           ))}
