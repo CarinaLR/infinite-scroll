@@ -15,8 +15,10 @@ Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstr
 ## Setup
 
 ```
-# views.py -the core of the project structure, connects the app with the database, and all the corresponding paths for each web page.
+# server -contains the api folder that separates our server-side from the client-side.
+# server.js -the core of the project structure connects the app with the database and all the corresponding paths, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
 # urls.py -determines the paths for each view function. Connects the HTTPrequest waiting for a matching response from views.py. Here we define the routes and arguments that we would need in order to fetch the data.
+# infinite-scroll -the core of the project structure connects the app with the database and all the corresponding paths, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
 # models.py -gives a perspective of how each table of the database looks like and what data types are referring to.
 # templates folder -contains all HTML files.
 # static folder -contains ` tandem ` folder which contains the css file with the stylesheet, all images using in the application, javascript file and a `readme` folder which contains the images for the readme file.
