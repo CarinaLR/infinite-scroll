@@ -10,12 +10,12 @@ Optional feature, `search-bar` allows the users to search for a specific `topic`
 
 This project is base on pinterest's pins data.
 
-Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Bootstrap4` / `Start Bootstrap Templates`.
+Built with `Node.js`/`Express`/`JavaScript`/ `ReactJS` / `React-Hooks`/ `Axios`/`Bootstrap4` / `Start Bootstrap Templates`.
 
 ## Setup
 
 ```
-# server -contains the api folder, and separating the backend from the frontend.
+# server -contains the api folder, and separates the backend from the frontend.
 # server.js -the core of the project structure connects the app with the database, configuring our express middleware and parsing our data for each call, providing a port to our localhost.
 # index.js -configure the middleware specific to this router.
 # pins.js -determines the paths for each API endpoint. Connects the HTTP request fetch the data and send the response in JSON format. Here we define the routes and arguments that we would need to fetch the data.
@@ -33,14 +33,14 @@ React Hooks allows to break down the logic. Allows to reuse the component, and b
 
 ## Enviroment
 
-- `python3 -m venv venv` create a virtual python enviroment
-- `$ . venv/bin/activate` activates the enviroment
 - `git clone` with this repo url to get the code in local machine
-- `pip install requirement.txt` to get all dependecies and packages
-- `pip install django` to creat superuser and activate database
-- `python manage.py makemigrations tandem` create tables and for our db
-- `python manage.py migrate` migrate the tables
-- `python manage.py runserver` activate localhost
+- `npm install` activates the environment and install all dependencies used in our backend
+- `cd infinite-scroll` `npx install` to get all dependecies and packages to our frontend, this has to be done in the `infinite-scroll` folder. So make sure to be in the application folder before install the dependecies.
+- `npm run start-server` actives our backend to get our JSON data.
+- `npm run start` actives our frontend, to be displayed and manipulate our DOM.
+- `npm run start-server` & `npm run start` both server and client have to be activated in order to start our application, as our frontend will send Axios requests to our API endpoints in the server.
+- `localhost 8080` port that holds our api routes.
+- `localhost 3000` port that supports our frontend.
 
 ## Home Page.
 
